@@ -1,0 +1,53 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: ${APP_NAME:buddydrop-backend}
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/buddydrop}
+    username: ${DB_USERNAME:buddydrop}
+    password: ${DB_PASSWORD:buddydrop}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: ${SHOW_SQL:true}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: ${KAFKA_GROUP_ID:buddydrop-group}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+  security:
+    user:
+      name: ${APP_USERNAME:admin}
+      password: ${APP_PASSWORD:admin123}
+      roles: ${APP_ROLES:ADMIN}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+  health:
+    redis:
+      enabled: false

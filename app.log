@@ -1,0 +1,53 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.0)
+
+2026-08-21T17:54:09.615+01:00  INFO 20356 --- [buddydrop-backend] [           main] c.b.backend.BuddydropBackendApplication  : Starting BuddydropBackendApplication v0.0.1-SNAPSHOT using Java 25.0.1 with PID 20356 (C:\projects\buddydrop\backend\target\buddydrop-backend-0.0.1-SNAPSHOT.jar started by DELL in C:\projects\buddydrop\backend)
+2026-08-21T17:54:09.626+01:00  INFO 20356 --- [buddydrop-backend] [           main] c.b.backend.BuddydropBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-08-21T17:54:11.176+01:00  INFO 20356 --- [buddydrop-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-21T17:54:11.179+01:00  INFO 20356 --- [buddydrop-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-21T17:54:11.209+01:00  INFO 20356 --- [buddydrop-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2026-08-21T17:54:11.276+01:00  INFO 20356 --- [buddydrop-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-21T17:54:11.277+01:00  INFO 20356 --- [buddydrop-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-21T17:54:11.293+01:00  INFO 20356 --- [buddydrop-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2026-08-21T17:54:12.485+01:00  INFO 20356 --- [buddydrop-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-08-21T17:54:12.508+01:00  INFO 20356 --- [buddydrop-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-08-21T17:54:12.509+01:00  INFO 20356 --- [buddydrop-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-08-21T17:54:12.558+01:00  INFO 20356 --- [buddydrop-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2826 ms
+2026-08-21T17:54:13.034+01:00  INFO 20356 --- [buddydrop-backend] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-08-21T17:54:13.158+01:00  INFO 20356 --- [buddydrop-backend] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 7.1.8.Final
+2026-08-21T17:54:13.931+01:00  INFO 20356 --- [buddydrop-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-21T17:54:13.990+01:00  INFO 20356 --- [buddydrop-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-21T17:54:14.287+01:00  INFO 20356 --- [buddydrop-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:buddydrop user=SA
+2026-08-21T17:54:14.289+01:00  INFO 20356 --- [buddydrop-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-21T17:54:14.321+01:00  WARN 20356 --- [buddydrop-backend] [           main] org.hibernate.dialect.Dialect            : HHH000511: The 2.4.240 version for [org.hibernate.dialect.PostgreSQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 13.0.0. Check the community dialects project for available legacy versions.
+2026-08-21T17:54:14.325+01:00  WARN 20356 --- [buddydrop-backend] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-21T17:54:14.352+01:00  INFO 20356 --- [buddydrop-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:buddydrop]
+	Database driver: H2 JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 2.4.240
+	Default catalog/schema: BUDDYDROP/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-21T17:54:14.823+01:00  INFO 20356 --- [buddydrop-backend] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-21T17:54:14.838+01:00  INFO 20356 --- [buddydrop-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-21T17:54:15.003+01:00  WARN 20356 --- [buddydrop-backend] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-21T17:54:15.152+01:00  INFO 20356 --- [buddydrop-backend] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-08-21T17:54:16.826+01:00  INFO 20356 --- [buddydrop-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-08-21T17:54:16.979+01:00  INFO 20356 --- [buddydrop-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-08-21T17:54:16.991+01:00  INFO 20356 --- [buddydrop-backend] [           main] c.b.backend.BuddydropBackendApplication  : Started BuddydropBackendApplication in 8.074 seconds (process running for 8.959)
+2026-08-21T17:54:17.143+01:00  INFO 20356 --- [buddydrop-backend] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-21T17:54:17.144+01:00  INFO 20356 --- [buddydrop-backend] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-08-21T17:54:17.148+01:00  INFO 20356 --- [buddydrop-backend] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-08-21T20:27:03.092+01:00  WARN 20356 --- [buddydrop-backend] [nio-8081-exec-3] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [138] milliseconds.
