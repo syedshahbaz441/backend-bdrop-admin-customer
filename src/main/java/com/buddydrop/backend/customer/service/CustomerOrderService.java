@@ -8,18 +8,75 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerOrderService {
 
+    private final List<CustomerOrderResponse> orders = List.of(
+            new CustomerOrderResponse(
+                    1L,
+                    "Bike courier",
+                    "On the way",
+                    "Riverside Market",
+                    "City Hall",
+                    "Today",
+                    "4:30 PM",
+                    "5:15 PM",
+                    22.50,
+                    68
+            ),
+            new CustomerOrderResponse(
+                    2L,
+                    "Same-day delivery",
+                    "Pickup confirmed",
+                    "Harbor Road",
+                    "Elm Street",
+                    "Yesterday",
+                    "11:10 AM",
+                    "12:00 PM",
+                    18.00,
+                    42
+            ),
+            new CustomerOrderResponse(
+                    3L,
+                    "Package transfer",
+                    "Delivered",
+                    "Bayside",
+                    "North End",
+                    "Mon",
+                    "9:45 AM",
+                    "Delivered",
+                    15.80,
+                    100
+            )
+    );
+
     public List<CustomerOrderResponse> getOrders() {
-        return List.of(
-            new CustomerOrderResponse(1L, "PENDING", 1200.00),
-            new CustomerOrderResponse(2L, "SHIPPED", 80.00)
-        );
+        return orders;
+    }
+
+    public CustomerOrderResponse getActiveOrder() {
+        return orders.getFirst();
     }
 
     public CustomerOrderResponse getOrderById(Long id) {
-        return new CustomerOrderResponse(id, "PROCESSING", 49.99);
+        return orders.stream()
+                .filter(order -> order.id().equals(id))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Order not found: " + id));
     }
 
     public CustomerOrderResponse createOrder(CustomerOrderCreateRequest request) {
-        return new CustomerOrderResponse(100L, "PENDING", request.totalAmount());
+        long nextId = orders.size() + 10L;
+        var created = new CustomerOrderResponse(
+                nextId,
+                request.service(),
+                "Order placed",
+                request.pickupLocation(),
+                request.dropoffLocation(),
+                request.orderDate(),
+                request.pickupTime(),
+                "Awaiting driver",
+                request.totalAmount(),
+                15
+        );
+
+        return created;
     }
 }

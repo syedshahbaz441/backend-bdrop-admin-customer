@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/customer/orders")
+@RequestMapping("/api/customer")
 public class CustomerOrderController {
 
     private final CustomerOrderService customerOrderService;
@@ -22,17 +22,22 @@ public class CustomerOrderController {
         this.customerOrderService = customerOrderService;
     }
 
-    @GetMapping
+    @GetMapping("/orders")
     public List<CustomerOrderResponse> getOrders() {
         return customerOrderService.getOrders();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/orders/active")
+    public ResponseEntity<CustomerOrderResponse> getActiveOrder() {
+        return ResponseEntity.ok(customerOrderService.getActiveOrder());
+    }
+
+    @GetMapping("/orders/{id}")
     public ResponseEntity<CustomerOrderResponse> getOrderById(@PathVariable Long id) {
         return ResponseEntity.ok(customerOrderService.getOrderById(id));
     }
 
-    @PostMapping
+    @PostMapping("/orders")
     public ResponseEntity<CustomerOrderResponse> createOrder(@RequestBody CustomerOrderCreateRequest request) {
         return ResponseEntity.ok(customerOrderService.createOrder(request));
     }
