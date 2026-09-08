@@ -22,10 +22,11 @@ public class SecurityConfig {
         http
             .cors(Customizer.withDefaults())
             .csrf(AbstractHttpConfigurer::disable)
+            .formLogin(AbstractHttpConfigurer::disable)
+            .httpBasic(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/actuator/health", "/api/**").permitAll()
-                .anyRequest().authenticated())
-            .httpBasic(Customizer.withDefaults());
+                .anyRequest().permitAll());
 
         return http.build();
     }
